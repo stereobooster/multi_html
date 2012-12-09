@@ -12,5 +12,8 @@ shared_examples_for "an adapter" do |adapter|
     it 'minify' do
       MultiHtml.min(" <p>some text</p>").should eq '<p>some text</p>'
     end
+
+    it 'support options'
+    
   end
 end

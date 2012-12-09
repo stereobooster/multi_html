@@ -2,7 +2,7 @@ require 'helper'
 require 'adapter_shared_example'
 require 'stringio'
 
-describe 'MultiHtml' do
+describe MultiHtml do
   context 'adapters' do
     before do
       MultiHtml.use nil
@@ -67,3 +67,13 @@ describe 'MultiHtml' do
   end
 end
 
+if defined?(MultiHtml::Filter)
+  describe MultiHtml::Filter do
+    it "filter works" do
+      pipeline = HTML::Pipeline.new [
+        MultiHtml::Filter
+      ]
+      pipeline.call(" <p>some text</p>").should eq '<p>some text</p>'
+    end
+  end
+end

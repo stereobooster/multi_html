@@ -20,12 +20,21 @@ load any.
 It will load libraries in following order:
 
  - [html_minifier](https://github.com/stereobooster/html_minifier)
- - [html_compressor](https://github.com/completelynovel/html_compressor)
- - [html_min](http://rubygems.org/gems/html_min)
- - [htmlmin](https://github.com/aishek/htmlmin)
- - [htmlcompressor](https://github.com/paolochiodi/htmlcompressor)
+ - TODO: [html_compressor](https://github.com/completelynovel/html_compressor)
+ - TODO: [html_min](http://rubygems.org/gems/html_min)
+ - TODO: [htmlmin](https://github.com/aishek/htmlmin)
+ - TODO: [htmlcompressor](https://github.com/paolochiodi/htmlcompressor)
 
 If no other library is available, MultiHtml falls back to [html_press](https://github.com/stereobooster/html_press).
+
+## HTML::Pipeline
+
+```ruby
+pipeline = HTML::Pipeline.new [
+  MultiHtml::Filter
+]
+pipeline.call('<div>  <p>test</p>  </div>') #=> '<div><p>test</p></div>'
+```
 
 ## TODO
 

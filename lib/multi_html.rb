@@ -1,4 +1,5 @@
 require "multi_html/version"
+require "multi_html/filter"
 
 module MultiHtml
   class ParseError < StandardError
@@ -111,10 +112,5 @@ module MultiHtml
       end
     end
 
-    # Minify partial HTML (as in style attribute)
-    def min_attr(string, options={})
-      min("a{#{string}}", options).gsub(/^a\{|\}$/, '')
-    end
   end
-
 end
